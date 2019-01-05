@@ -20,12 +20,7 @@
         <hutool-all.version>4.0.12</hutool-all.version>
         <game.core.version>1.0</game.core.version>
         <game.app.service.version>1.0</game.app.service.version>
-        <game.play.service.version>1.0</game.play.service.version>
-        <game.h5.service.version>1.0</game.h5.service.version>
-        <game.point.service.version>1.0</game.point.service.version>
         <game.admin.service.version>1.0</game.admin.service.version>
-        <game.schedule.service.version>1.0</game.schedule.service.version>
-        <game.third.party.fenqile.version>1.0</game.third.party.fenqile.version>
         <pagehelper.version>4.0.3</pagehelper.version>
         <xerces.version>2.9.1</xerces.version>
         <fastjson.version>1.2.47</fastjson.version>
@@ -33,7 +28,6 @@
         <weixin-java.sdk.verson>3.0.0</weixin-java.sdk.verson>
         <springboot.version>1.5.4.RELEASE</springboot.version>
         <easypoi.version>3.0.3</easypoi.version>
-        <searchbox.jest>5.3.3</searchbox.jest>
         <javax.mail>1.4.7</javax.mail>
         <com.sun.mail>1.5.4</com.sun.mail>
         <jpush-client.version>3.3.7</jpush-client.version>
@@ -92,21 +86,6 @@
                 <version>${aliyun.oss.verson}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.binarywang</groupId>
-                <artifactId>weixin-java-miniapp</artifactId>
-                <version>${weixin-java.sdk.verson}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.binarywang</groupId>
-                <artifactId>weixin-java-pay</artifactId>
-                <version>${weixin-java.sdk.verson}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.binarywang</groupId>
-                <artifactId>weixin-java-mp</artifactId>
-                <version>${weixin-java.sdk.verson}</version>
-            </dependency>
-            <dependency>
                 <groupId>cn.afterturn</groupId>
                 <artifactId>easypoi-base</artifactId>
                 <version>${easypoi.version}</version>
@@ -135,11 +114,6 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.alipay.sdk</groupId>
-                <artifactId>alipay-sdk-java</artifactId>
-                <version>${alipay.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
