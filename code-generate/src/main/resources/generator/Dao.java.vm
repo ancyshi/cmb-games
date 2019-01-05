@@ -1,0 +1,21 @@
+package ${package}.dao;
+
+import ${package}.entity.${className};
+import ${package}.entity.bo.${className}BO;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+/**
+ * ${comments}
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+@Mapper
+public interface ${className}Dao extends ICommonDao<${className},${pk.attrType}>{
+
+    List<${className}> findByParameter(${className}BO ${classname}BO);
+
+}

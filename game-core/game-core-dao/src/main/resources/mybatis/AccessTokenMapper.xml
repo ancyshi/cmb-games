@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.fulugame.core.dao.AccessTokenDao">
+    <resultMap id="AccessTokenResultMap" type="cn.fulugame.core.entity.AccessToken">
+        <id column="id" property="id"/>
+        <result column="access_token" property="accessToken"/>
+        <result column="expiration" property="expiration"/>
+        <result column="expires_in" property="expiresIn"/>
+        <result column="refresh_token" property="refreshToken"/>
+        <result column="user_id" property="userId"/>
+        <result column="open_id" property="openId"/>
+    </resultMap>
+
+    <resultMap id="AccessTokenResultBOMap" type="cn.fulugame.core.entity.bo.AccessTokenBO"
+               extends="AccessTokenResultMap">
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,access_token,expiration,expires_in,refresh_token,user_id,open_id    </sql>
+
+    <select id="findById" parameterType="java.lang.Long" resultMap="AccessTokenResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from access_token
+        <where>
+            id = #{id}
+        </where>
+    </select>
+
+    <select id="findAll" resultMap="AccessTokenResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from access_token
+    </select>
+
+    <select id="findByParameter" resultMap="AccessTokenResultMap"
+            parameterType="cn.fulugame.core.entity.bo.AccessTokenBO">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM access_token
+        <where>
+            <if test="accessToken != null">
+                and access_token = #{accessToken}
+            </if>
+            <if test="expiration != null">
+                and expiration = #{expiration}
+            </if>
+            <if test="expiresIn != null">
+                and expires_in = #{expiresIn}
+            </if>
+            <if test="refreshToken != null">
+                and refresh_token = #{refreshToken}
+            </if>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="openId != null">
+                and open_id = #{openId}
+            </if>
+        </where>
+    </select>
+
+    <delete id="deleteById" parameterType="java.lang.Long">
+        delete from access_token
+        <where>
+            id = #{id}
+        </where>
+    </delete>
+
+    <insert id="create" useGeneratedKeys="true" keyProperty="id" parameterType="cn.fulugame.core.entity.AccessToken">
+        insert into
+        access_token (access_token,expiration,expires_in,refresh_token,user_id,open_id)
+        values
+        (#{accessToken},#{expiration},#{expiresIn},#{refreshToken},#{userId},#{openId})
+    </insert>
+
+    <update id="update" parameterType="cn.fulugame.core.entity.AccessToken">
+        update access_token
+        <set>
+
+            <if test="accessToken != null">
+                access_token = #{accessToken},
+            </if>
+
+            <if test="expiration != null">
+                expiration = #{expiration},
+            </if>
+
+            <if test="expiresIn != null">
+                expires_in = #{expiresIn},
+            </if>
+
+            <if test="refreshToken != null">
+                refresh_token = #{refreshToken},
+            </if>
+
+            <if test="userId != null">
+                user_id = #{userId},
+            </if>
+
+            <if test="openId != null">
+                open_id = #{openId},
+            </if>
+        </set>
+        <where>
+            id = #{id}
+        </where>
+    </update>
+</mapper>

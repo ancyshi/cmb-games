@@ -1,0 +1,29 @@
+datasource:
+    playAdminDb:
+        url: jdbc:mysql://127.0.0.1:3306/cmb?autoReconnect=true&failOverReadOnly=false&useUnicode=true&zeroDateTimeBehavior=convertToNull
+        username: root
+        password: 123456
+        driverClassName: com.mysql.jdbc.Driver
+# REDIS (RedisProperties)
+# Redis数据库索引（默认为0）
+spring:
+  redis:
+    database: 1
+    host: 118.31.42.71
+    port: 6379
+    password: Wzxiong432
+    timeout: 0
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 20
+      min-idle: 8
+config:
+    oss:
+      endpoint: "http://oss-cn-hangzhou.aliyuncs.com"
+      accessKeyId: "LTAIuddbH7bqB9kz"
+      accessKeySecret: "zXdKJlSFZ51k8G8q0uUzranXwbS1kh"
+      bucketName: "123-456-34"
+      host: "http://test-123.oss-cn-hangzhou.aliyuncs.com/"
+    evn:
+      prefix: DEV
