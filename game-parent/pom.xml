@@ -25,6 +25,7 @@
         <xerces.version>2.9.1</xerces.version>
         <fastjson.version>1.2.47</fastjson.version>
         <aliyun.oss.verson>2.8.2</aliyun.oss.verson>
+        <google.gson>2.8.2</google.gson>
         <weixin-java.sdk.verson>3.0.0</weixin-java.sdk.verson>
         <springboot.version>1.5.4.RELEASE</springboot.version>
         <easypoi.version>3.0.3</easypoi.version>
@@ -68,7 +69,8 @@
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-redis</artifactId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>1.5.12.RELEASE</version>
             </dependency>
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
@@ -84,6 +86,11 @@
                 <groupId>com.aliyun.oss</groupId>
                 <artifactId>aliyun-sdk-oss</artifactId>
                 <version>${aliyun.oss.verson}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${google.gson}</version>
             </dependency>
             <dependency>
                 <groupId>cn.afterturn</groupId>
