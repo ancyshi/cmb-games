@@ -24,5 +24,12 @@ public class AccessTokenController {
     public Result index() {
         return Result.success().data(accessTokenService.find(1,10));
     }
+    
+    
+    @GetMapping(value = "/testPage")
+    public ModelAndView list(Model model) {
+        ModelAndView view = new ModelAndView("h5_game_list");
+        return view;
+    }
 
 }
